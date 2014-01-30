@@ -60,4 +60,18 @@ int penempatan(int baris, int kolom)
 //tidak ada konflik
      return 0;
 }
-           
+void queen(int baris, int jml_queen)
+{
+     int kolom;
+     for(kolom=1;kolom<=jml_queen;kolom++)
+     {
+        if(penempatan(baris,kolom))
+        {
+           papan[baris]=kolom;
+           if(baris==jml_queen)
+              cetak_papan(jml_queen);   
+           else
+              queen(baris+1,jml_queen);
+        }
+     }
+}
