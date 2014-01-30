@@ -59,6 +59,7 @@ int penempatan(int baris, int kolom)
      }
 //tidak ada konflik
      return 0;
+     
 }
 void queen(int baris, int jml_queen)
 {
@@ -67,10 +68,10 @@ void queen(int baris, int jml_queen)
      {
         if(penempatan(baris,kolom))
         {
-           papan[baris]=kolom;
-           if(baris==jml_queen)
-              cetak_papan(jml_queen);   
-           else
+           papan[baris]=kolom; //tidak ada konflik jadi tempatkan queen
+           if(baris==jml_queen) //jalan buntu
+              cetak_papan(jml_queen); //cetak papan
+           else                         //coba queen dengan posisi selanjutnya
               queen(baris+1,jml_queen);
         }
      }
