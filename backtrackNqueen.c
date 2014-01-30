@@ -2,6 +2,7 @@
 #include <stdlib.h>
 int jml_queen;
 int papan[20];
+int count;
 
 int main(int argc, char *argv[])
 {
@@ -9,30 +10,37 @@ int main(int argc, char *argv[])
   printf("\t\t\t========================================\n\n");
   printf("\t\tMasukan Jumlah Queen : ");
   scanf("%d",&jml_queen);
-  printf("\nSolusi yang Ditemukan:\n");
   return 0;
 }
 
 //Fungsi membuat papan matriks
-void cetak_papan(int jml_queen,int q[])
+void cetak_papan(int jml_queen)
 {
  //identifield
  int i,j;
- char array[10][10];
  
  //proses
- for(i=1;i<=jml_queen;i++)
- {
-   for(j=1;j<=jml_queen;j++)
+ printf("\n\n solusi %d:\n\n",++count);
+ printf(" ");
+   for(i=1;i<=jml_queen;i++)
    {
-    array[i][j]='.';
+      printf("   %d",i);
    }
- }
- 
- for(i=1;i<=jml_queen;i++)
- {
-   array[i][q[i]]='Q';
- }
+   for(i=1;i<=jml_queen;i++)
+   {
+      printf("\n\n%d",i);
+      for(j=1;j<=jml_queen;j++)        
+      {
+         if(papan[i]==j)
+            //penempatan Queen
+            printf("   Q");   
+         else
+            //papan kosong
+            printf("   .");   
+      }
+   }
+   printf("\n\n Press any key to continue .....");
+   getch();
   
 }
 
