@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
   queen(1,jml_queen);
   printf("\n\n\t\t\t\t======================");
   printf("\n\t\t\t\tSOLUSI TELAH HABIS!!!\n\n");
+  printf("\n\t\t\tDitemukan solusi sebanyak %d buah\n\n",++count-1);
   system("pause");
   return 0;
 }
